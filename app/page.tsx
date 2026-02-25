@@ -45,7 +45,7 @@ export default function Home() {
     <div className="bg-white">
 
       {/* ── HERO ── */}
-      <div className="relative min-h-screen px-11 bg-black overflow-hidden">
+      <div className="relative min-h-screen px-2 lg:px-11 bg-black overflow-hidden">
         <Image src="/assets/images/coffie-bg.jpg" alt="Coffee background" fill className="object-cover object-center opacity-50" priority />
         <div className="absolute inset-0 z-10" />
 
