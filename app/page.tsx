@@ -36,15 +36,18 @@ const testimonials = [
 ]
 
 export default function Home() {
-  const [current, setCurrent] = useState(0)
-  const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1))
-  const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1))
-  const t = testimonials[current]
+ const [current, setCurrent] = useState(0)
+const total = testimonials.length
+
+const prev = () => setCurrent((c) => (c - 1 + total) % total)
+const next = () => setCurrent((c) => (c + 1) % total)
+
+const t = testimonials[current]
 
   return (
     <div className="bg-white">
 
-      {/* ── HERO ── */}
+
       <div className="relative min-h-screen px-2 lg:px-11 bg-black overflow-hidden">
         <Image src="/assets/images/coffie-bg.jpg" alt="Coffee background" fill className="object-cover object-center opacity-50" priority />
         <div className="absolute inset-0 z-10" />
